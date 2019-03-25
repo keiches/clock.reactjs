@@ -1,0 +1,59 @@
+{
+  "plugins": [
+    "lodash"
+  ],
+  "retainLines": true,
+  "ignore": [
+    "/node_modules/"
+  ],
+  "env": {
+    "development": {
+      "presets": [
+        [
+          "@babel/env",
+          {
+            "targets": {
+              "chrome": "47"
+            },
+            "modules": false,
+            "useBuiltIns": "entry",
+            "debug": true
+          }
+        ]
+      ],
+      "sourceMaps": true
+    },
+    "stage": {
+      "presets": [
+        [
+          "@babel/env",
+          {
+            "targets": {
+              "chrome": "47"
+            },
+            "modules": false,
+            "useBuiltIns": "entry",
+            "debug": true
+          }
+        ]
+      ],
+      "sourceMaps": true
+    },
+    "production": {
+      "presets": [
+        [
+          "@babel/env",
+          {
+            "targets": {
+              "chrome": "47"
+            },
+            "modules": false,
+            "useBuiltIns": "entry",
+            "debug": false
+          }
+        ]
+      ],
+      "sourceMaps": false
+    }
+  }
+}

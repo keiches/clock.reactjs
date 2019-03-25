@@ -23,6 +23,16 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>React App</title>
+    <script>
+      document.onreadystatechange = function onReadyStateChange() {
+        /* if (document.readyState === 'complete') {
+          // console.log('The document ready state is "complete"');
+          document.body.style.display = '';
+          document.onreadystatechange = null;
+        }*/
+        console.log('onreadystatechange', document.readyState);
+      };
+    </script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>

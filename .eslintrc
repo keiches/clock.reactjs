@@ -1,0 +1,109 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true
+  },
+  "globals": {
+    "PRODUCTION": true,
+    "$": true,
+    "_": true
+  },
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "sourceType": "module"
+  },
+  "settings": {
+    "import/resolver": {
+      "webpack": {
+        "config": {
+          "resolve": {
+            "extensions": [
+              ".js"
+            ]
+          }
+        }
+      },
+      "node": {
+        "config": {
+          "resolve": {
+            "extensions": [
+              ".js"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "rules": {
+    "prettier/prettier": [
+      "error"
+    ],
+    "no-param-reassign": [
+      "error",
+      {
+        "props": false
+      }
+    ],
+    "no-unused-vars": "warn",
+    "no-console": "off",
+    "arrow-parens": [
+      "error",
+      "as-needed"
+    ],
+    "arrow-body-style": [
+      "warn",
+      "as-needed"
+    ],
+    "no-underscore-dangle": [
+      "error",
+      {
+        "allow": [
+          "_defaults",
+          "_This",
+          "_initialize",
+          "_load",
+          "_active",
+          "_inactive",
+          "_render",
+          "_show",
+          "_hide",
+          "_history",
+          "buttonScrollToTop"
+        ],
+        "allowAfterSuper": true,
+        "allowAfterThis": true,
+        "enforceInMethodNames": false
+      }
+    ],
+    "spaced-comment": [
+      "warn",
+      "always",
+      {
+        "exceptions": [
+          "-",
+          "+"
+        ],
+        "markers": [
+          "!<"
+        ]
+      }
+    ],
+    "no-debugger": 0,
+    "prefer-const": [
+      "warn"
+    ],
+    "prefer-destructuring": "off",
+    "linebreak-style": 0,
+    "class-methods-use-this": "warn"
+  },
+  "extends": [
+    "react-app",
+    "airbnb-base",
+    "prettier",
+    "plugin:prettier/recommended"
+  ],
+  "plugins": [
+    "import"
+  ]
+}
