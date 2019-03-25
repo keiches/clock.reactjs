@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 window.requestAnimationFrame =
   window.requestAnimationFrame ||
@@ -44,13 +45,17 @@ window.clearRequestInterval = function clearRequestInterval(handle) {
 };
 
 class Digit extends Component {
+  state = {
+    value: this.props.value,
+    angle: 360 / this.props.reset,
+    style: {
+      transform: 'rotate(0deg)'
+    },
+    ticksToReset: this.props.ticks * 1000
+  };
+
   constructor(props) {
     super(props);
-    this.state = {
-      value: props.value,
-      reset: 360 / props.reset,
-      ticksToReset: props.ticks * 1000
-    };
     this.handleTicked = this.handleTicked.bind(this);
     this.processTick = this.processTick.bind(this);
   }
@@ -77,31 +82,27 @@ class Digit extends Component {
   componentWillReceiveProps(props) {
     if (props.reset !== this.props.reset) {
       this.setState({
-        reset: 360 / props.reset
+        angle: 360 / props.reset
       });
     }
     if (props.value !== this.props.value) {
-      // console.log('xxxx', props.className, props);
-      /* if (this.props.ticks) {
-        if (this.props.reset > props.value) {
-          this.setState({
-            value: props.value
-          });
-          this.props.onTicked();
-        } else {
-          this.setState({
-            value: 0
-          });
-          this.props.onReset();
-        }
-      }*/
-      this.setState({
-        value: props.value,
-        style: {
-          transform: `rotate(${(this.state.reset * props.value) % 360}deg)`
-        }
-      });
-      this.handleTicked();
+      if (props.value === 0) {
+        this.setState({
+          value: 0,
+          style: {
+            transform: 'rotate(0deg)'
+          }
+        });
+        this.props.onOverflowed();
+      } else {
+        this.setState({
+          value: props.value,
+          style: {
+            transform: `rotate(${(this.state.angle * props.value) % 360}deg)`
+          }
+        });
+        this.props.onTicked();
+      }
     }
   }
 
@@ -114,10 +115,9 @@ class Digit extends Component {
       this.setState({
         value,
         style: {
-          transform: `rotate(${(state.reset * value) % 360}deg)`
+          transform: `rotate(${(state.angle * value) % 360}deg)`
         }
       });
-      // 360 / this.props.reset
       this.props.onTicked();
     } else {
       this.setState({
@@ -126,7 +126,7 @@ class Digit extends Component {
           transform: 'rotate(0deg)'
         }
       });
-      this.props.onReset();
+      this.props.onOverflowed();
     }
   }
 
@@ -157,10 +157,32 @@ class Digit extends Component {
         }}
       >*/
       <div className={`digit ${state.className}`} style={state.style}>
+        <div className="border-outer">
+          <div className="border-inner" />
+        </div>
         {value}
       </div>
     );
   }
 }
+
+Digit.propTypes = {
+  autoTicks: PropTypes.bool,
+  longFormatted: PropTypes.bool,
+  value: PropTypes.number,
+  reset: PropTypes.number,
+  ticks: PropTypes.number,
+  onOverflowed: PropTypes.func,
+  onTicked: PropTypes.func
+};
+Digit.defaultProps = {
+  autoTicks: false,
+  longFormatted: true,
+  value: 0,
+  reset: 60,
+  ticks: 1,
+  onOverflowed: null,
+  onTicked: null
+};
 
 export default Digit;
