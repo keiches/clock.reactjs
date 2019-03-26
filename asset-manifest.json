@@ -1,5 +1,5 @@
 {
-  "main.css": "/clock.reactjs/static/css/main.74f6e7c5.chunk.css",
+  "main.css": "/clock.reactjs/static/css/main.e67d4bf6.chunk.css",
   "main.js": "/clock.reactjs/static/js/main.1708e4c4.chunk.js",
   "main.js.map": "/clock.reactjs/static/js/main.1708e4c4.chunk.js.map",
   "runtime~main.js": "/clock.reactjs/static/js/runtime~main.cb704526.js",
@@ -7,8 +7,8 @@
   "static/js/2.12057b52.chunk.js": "/clock.reactjs/static/js/2.12057b52.chunk.js",
   "static/js/2.12057b52.chunk.js.map": "/clock.reactjs/static/js/2.12057b52.chunk.js.map",
   "index.html": "/clock.reactjs/index.html",
-  "precache-manifest.d36b789e8c101cd1f8410567b1388565.js": "/clock.reactjs/precache-manifest.d36b789e8c101cd1f8410567b1388565.js",
+  "precache-manifest.0f0733521fb09d933832bb9b02b97586.js": "/clock.reactjs/precache-manifest.0f0733521fb09d933832bb9b02b97586.js",
   "service-worker.js": "/clock.reactjs/service-worker.js",
-  "static/css/main.74f6e7c5.chunk.css.map": "/clock.reactjs/static/css/main.74f6e7c5.chunk.css.map",
+  "static/css/main.e67d4bf6.chunk.css.map": "/clock.reactjs/static/css/main.e67d4bf6.chunk.css.map",
   "static/media/logo.svg": "/clock.reactjs/static/media/logo.5d5d9eef.svg"
 }

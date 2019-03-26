@@ -1,10 +1,10 @@
 self.__precacheManifest = [
   {
-    "revision": "c487ce191eb8c80b9be7",
-    "url": "/clock.reactjs/static/css/main.74f6e7c5.chunk.css"
+    "revision": "7b06ce3dd7075a9ad35c",
+    "url": "/clock.reactjs/static/css/main.e67d4bf6.chunk.css"
   },
   {
-    "revision": "c487ce191eb8c80b9be7",
+    "revision": "7b06ce3dd7075a9ad35c",
     "url": "/clock.reactjs/static/js/main.1708e4c4.chunk.js"
   },
   {
@@ -20,7 +20,7 @@ self.__precacheManifest = [
     "url": "/clock.reactjs/static/media/logo.5d5d9eef.svg"
   },
   {
-    "revision": "d0fb644fbbac2fdf85e2709f93ae1150",
+    "revision": "4d83e55719c094110b466174c1d3be4b",
     "url": "/clock.reactjs/index.html"
   }
 ];
